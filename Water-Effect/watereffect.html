@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Water Effect</title>
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-family: Comic Sans MS;
+            }
+            body{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                min-height: 100wh;
+                background: #0000;
+            }
+            .content{
+                position: relative;
+            }
+            .content p{
+                font-size: 150px;
+                position: absolute;
+                color: #ffff;
+                transform: translate(-50%,50%);
+
+            }
+            .content p:nth-child(1){
+                color: transparent;
+                -webkit-text-stroke:2px #03a9f4;
+
+            }
+            .content p:nth-child(2){
+                color: #03a9f4;
+                animation: animate 4s ease-in-out infinite;
+
+            }
+            @keyframes animate{
+                0%,100%{
+                    clip-path: polygon(0% 55%, 7% 52%, 18% 48%, 33% 45%, 46% 49%, 59% 55%, 72% 59%, 88% 61%, 94% 55%, 99% 47%, 99% 98%, 0% 99%);
+                }
+                50%{
+                    clip-path: polygon(0% 50%, 15% 57%, 26% 59%, 36% 60%, 49% 59%, 61% 53%, 68% 49%, 82% 45%, 94% 43%, 97% 43%, 97% 99%, 1% 100%);
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="content">
+            <p>YASH</p>
+            <p>YASH</p>
+        </div>
+    </body>
+</html>
