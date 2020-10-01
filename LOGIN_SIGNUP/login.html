@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Sign In Page</title>
+
+<link rel="stylesheet"
+	href="fonts/material-icon/css/material-design-iconic-font.min.css">
+
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/navbar.css">
+
+<style type="text/css"> 
+	
+	body { 
+		margin: 0;
+	}
+	li.topNav {
+		float: right; 
+		list-style-type: none; 
+	}
+	ul.topContainer {
+		overflow: hidden; 
+		width: 100%;
+		background-color: darkblue;
+		padding: 20px 20px 20px 0px; 
+	}
+	li.topNav a.topLink:hover {
+		background-color: white; 
+		color: black;
+		padding: 16px 16px 16px 16px;
+	}
+	.topLink {
+		font-family: helvetica;
+		font-size:30;
+		color: white; 
+		padding: 16px 16px 16px 16px; 
+	}
+	
+</style>
+</head>
+<body>
+	<ul class="topContainer">
+		<li class="topNav"><a href="login.html"class="topLink">Student</a></li>
+		<li class="topNav"><a href="adminlogin.html" class="topLink">Admin</a></li>
+		<li class="topNav"><a href="homeindex.html" class="topLink">Home</a></li>
+	</ul>
+	<div class="main">
+
+		<section class="sign-in">
+			<div class="container">
+				<div class="signin-content">
+					<div class="signin-image">
+						<figure>
+							<img src="images/signin-image.jpg" alt="sing up image">
+						</figure>
+
+					</div>
+
+					<div class="signin-form">
+						<h2 class="form-title">Student Sign In</h2>
+						<form method="get" action="Loginregister" class="register-form"
+							id="login-form">
+							<div class="form-group">
+								<label for="your_name"><i
+									class="zmdi zmdi-account material-icons-name"></i></label> <input
+									type="text" name="uname" id="username" placeholder="Username"
+									required />
+							</div>
+							<div class="form-group">
+								<label for="your_pass"><i class="zmdi zmdi-lock"></i></label> <input
+									type="password" name="password" id="password"
+									placeholder="Password" required />
+							</div>
+							<div class="form-group form-button">
+								<input type="submit" name="val" id="signin" class="form-submit"
+									value="Login" />
+							</div>
+							<div>
+								<br> <a href="registartion.html" class="signup-image-link">New
+									Student? Create an account</a>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</section>
+
+	</div>
+
+	<script src="vendor/jquery/jquery.min.js"></script>
+	<script src="js/main.js"></script>
+	</form>
+</body>
+</html>
+
