@@ -1,0 +1,27 @@
+<!DOCTYPE html> <html>
+<head>
+<title>Practical 1</title>
+<script type="text/javascript"> 
+function mul()
+{
+var a=document.getElementById('i1').value;
+var b=document.getElementById('i2').value; var c=Number(a)*Number(b);
+document.getElementById('i3').value=c;
+}
+function div() {
+var a=document.getElementById('i1').value;
+var b=document.getElementById('i2').value; var c=Number(a)/Number(b);
+document.getElementById('i3').value=c;
+}
+</script>
+</head> <body> <form>
+enter first number <input type="text" id="i1"> <br>
+<br>
+enter second number <input type="text" id="i2" > <br>
+<br>
+<button type="button" onclick="mul()">mul</button> <button type="button" onclick="div()">div</button> <br>
+<br>
+answer is <input type="text" id="i3">
+</form>
+</body>
+</html>
