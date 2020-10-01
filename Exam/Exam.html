@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CE2 Exam</title>
+	<style type="text/css">
+		.square{
+			width: 100px;
+			height: 100px;
+			animation-direction: alternate;
+			background-color: red;
+			animation: anim 4s 1;
+			position: relative;
+		}
+		@keyframes anim{
+			0%   { left: 0px; top: 0px;}
+  			25%  { left: 100px; top: 0px;}
+  			50%  { left: 100px; top: 100px;}
+  			75%  { left: 0px; top: 100px;}
+  			100% { left: 0px; top: 0px;}
+		}
+		#result{
+			color: black;
+		}
+	</style>
+</head>
+<body>
+<div class="square">
+	
+</div><br><br><br><br><br><br>
+<p id="result">Answer</p>
+<button onclick="add('html','css')">Add html and css</button>
+<script type="text/javascript">
+	function add(s1,s2)
+	{
+		s1=s1.substring(1,s1.length);
+		s2=s2.substring(1,s2.length);
+		document.getElementById("result").innerText= ""+s1+s2;
+	}
+</script>
+</body>
+</html>
