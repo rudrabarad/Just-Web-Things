@@ -1,0 +1,348 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<title>Canvas</title>
+</head>
+<body>
+<canvas id="myCanvas" width="200" height="300" style="border:3px solid black;">
+	<script type="text/javascript">
+		var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
+ctx.strokeStyle='blue';
+ctx.lineWidth=10;
+ctx.moveTo(0, 0);
+ctx.lineTo(100, 150);
+ctx.stroke();
+ctx.moveTo(200, 0);
+ctx.lineTo(100, 150);
+ctx.stroke();
+ctx.moveTo(100, 150);
+ctx.lineTo(100, 300);
+ctx.stroke();
+	</script>
+</canvas>
+<canvas id="canvas2" width="200" height="300" style="border:3px solid black">
+	<script type="text/javascript">
+		var c = document.getElementById("canvas2");
+var ctx = c.getContext("2d");
+ctx.strokeStyle='blue';
+ctx.lineWidth=10;
+ctx.moveTo(0, 0);
+ctx.lineTo(100, 150);
+ctx.stroke();
+ctx.moveTo(200, 0);
+ctx.lineTo(100, 150);
+ctx.stroke();
+ctx.moveTo(100, 150);
+ctx.lineTo(100, 300);
+ctx.stroke();
+	</script>
+</canvas>
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html>
+	<head>
+		<title>CANVAS</title>
+		<style type="text/css">
+			canvas{
+				border: 2px solid black;
+			}
+		</style>
+		<script type="text/javascript">
+			function line() {
+				var canvas=document.getElementById('mycanvas');
+				var context=canvas.getContext('2d');
+				context.clearRect(0, 0, canvas.width, canvas.height);
+				context.strokeStyle="red";
+				context.moveTo(10,10);
+				context.lineTo(1505,10);
+				context.stroke();
+			}
+			function rectangle() {
+				var canvas=document.getElementById('mycanvas');
+				var context=canvas.getContext('2d');
+				context.clearRect(0, 0, canvas.width, canvas.height);
+				context.strokeStyle="green";
+				context.lineWidth="40";
+				context.fillStyle="yellow";
+				context.strokeRect(50,50,1415,500);								context.fillRect(50,50,1415,500);
+				context.clearRect(380,130,800,280);
+				context.lineWidth="1";
+			}
+			function image() {
+				var canvas=document.getElementById('mycanvas');
+				var context=canvas.getContext('2d');
+				context.clearRect(0, 0, canvas.width, canvas.height);
+				var img=new Image();
+				img.src="123.jpg";
+				img.onload=function() {
+					pattern=context.createPattern(img,"repeat");						context.fillStyle=pattern;
+					context.strokeRect(50,50,1415,500);				
+					context.fillRect(50,50,1415,500);
+				};
+			}
+			function gradient() {
+				var canvas=document.getElementById('mycanvas');
+				var context=canvas.getContext('2d');
+				context.clearRect(0, 0, canvas.width, canvas.height);
+				var gradient=context.createLinearGradient(100,100,500,1365);      
+				//var gradient=context.createLinearGradient(100,100,1365,500);      
+				gradient.addColorStop(1,"yellow");				//0=>up 1=>down
+				gradient.addColorStop(0,"red");				
+				context.fillStyle=gradient;
+				context.fillRect(50,50,1415,500);
+			}
+			function circle() {
+				var canvas=document.getElementById('mycanvas');
+				var context=canvas.getContext('2d');
+				context.clearRect(0, 0, canvas.width, canvas.height);
+				context.beginPath();
+				context.arc(725,300,250,0,Math.PI*2,true);						context.closePath();
+				context.strokeStyle="green";
+				context.lineWidth="4";
+				context.fillStyle="yellow";
+				context.fill();
+				context.stroke();
+			}
+			function triangle() {
+				var canvas=document.getElementById('mycanvas');
+				var context=canvas.getContext('2d');
+				context.clearRect(0, 0, canvas.width, canvas.height);
+				context.beginPath();
+				context.moveTo(100,100);
+				context.lineTo(1415,100);
+				context.lineTo(780,480);
+				context.closePath();
+				context.strokeStyle="green";
+				context.lineWidth="4";
+				context.fillStyle="yellow";
+				context.fill();
+				context.stroke();
+			}
+			function smiley() {
+				var canvas=document.getElementById('mycanvas');
+				var context=canvas.getContext('2d');
+				context.clearRect(0, 0, canvas.width, canvas.height);
+				context.beginPath();
+				context.arc(725,300,250,0,Math.PI*2,true);						context.closePath();
+				context.strokeStyle="green";
+				context.lineWidth="2";
+				context.fillStyle="yellow";
+				context.fill();
+				context.stroke();
+				context.beginPath();
+				context.arc(600,200,20,0,Math.PI*2,true);		//(center x,centery,radius,starting-angle,ending-angle,colckwise)		
+				context.closePath();
+				context.strokeStyle="black";
+				context.fillStyle="black";
+				context.fill();
+				context.stroke();
+				context.beginPath();
+				context.arc(850,200,20,0,Math.PI*2,true);	
+				context.closePath();
+				context.fill();
+				context.stroke();
+				context.beginPath();
+				context.arc(725,325,180,0,Math.PI,false);
+				context.closePath();
+				context.lineWidth=4;	
+				context.stroke();
+			}
+			function home() {
+				var canvas=document.getElementById('mycanvas');
+				var context=canvas.getContext('2d');
+				context.clearRect(0, 0, canvas.width, canvas.height);
+				context.strokeStyle="red";
+				context.lineWidth="0";
+				context.fillStyle="red";
+				context.beginPath();
+				context.moveTo(825,150);
+				context.lineTo(875,150);
+				context.lineTo(825,100);
+				context.closePath();
+				context.fill();
+				context.stroke();
+				context.beginPath();
+				context.strokeRect(425,100,400,50);				//(start left,starttop,width,height)
+				context.fillRect(425,100,400,50);
+				context.closePath();
+				context.fill();
+				context.stroke();
+				context.beginPath();
+				context.moveTo(475,150);
+				context.lineTo(425,100);
+				context.lineTo(375,150);
+				context.closePath();
+				context.fill();
+				context.stroke();
+				context.beginPath();
+				context.strokeRect(375,150,500,300);				//(start left,starttop,width,height)
+				context.fillRect(375,150,500,300);
+				context.closePath();
+				context.fill();
+				context.stroke();
+				context.clearRect(398,200,15,30);
+				context.clearRect(416,200,15,30);
+				context.clearRect(434,200,15,30);
+				context.clearRect(499,200,15,30);
+				context.clearRect(517,200,15,30);
+				context.clearRect(535,200,15,30);
+				context.clearRect(825,200,15,30);
+				context.clearRect(807,200,15,30);
+				context.clearRect(789,200,15,30);
+				context.clearRect(620,300,100,149);
+				context.moveTo(475,150);
+				context.lineTo(475,450);
+				context.fill();
+				context.stroke();
+				context.fillStyle="white";
+				context.beginPath();
+				context.arc(425,130,12,0,Math.PI*2,true);		//(center x,centery,radius,starting-angle,ending-angle,colckwise)		
+				context.closePath();
+				context.fill();
+				context.stroke();
+				context.fillStyle="yellow";
+				/*context.moveTo(500,150);
+				context.lineTo(550,200);
+				context.moveTo(150,150);
+				context.lineTo(200,200);
+				context.moveTo(200,200);
+				context.lineTo(550,200);
+				context.moveTo(150,150);
+				context.lineTo(500,150);
+				context.moveTo(150,150);
+				context.lineTo(100,200);
+				context.lineTo(200,200);
+				context.stroke();
+				context.fill();*/
+			}	
+			function copyImage() {
+				var canvas=document.getElementById('mycanvas');
+				var context=canvas.getContext('2d');
+				context.clearRect(0, 0, canvas.width, canvas.height);
+				var img=document.getElementById('image');
+				context.drawImage(img,10,10);
+			}
+			function text() {
+				var canvas=document.getElementById('mycanvas');
+				var context=canvas.getContext('2d');
+				context.clearRect(0, 0, canvas.width, canvas.height);
+				context.font="35px serif";
+				context.strokeText('Kamal',50,60);
+				//context.textBaseLine="bottom";
+			}	
+		</script>
+	</head>
+	<body>
+		<h1>Canvas</h1>
+		<canvas height="600px" id="mycanvas" width="1515px">browser don't support</canvas>
+		<center>
+			<button type="button" onclick="line()">Line</button>
+			<button type="button" onclick="rectangle()">Rectangle</button>
+			<button type="button" onclick="gradient()">Gradient</button>
+			<button type="button" onclick="circle()">Circle</button>
+			<button type="button" onclick="triangle()">Triangle</button>
+			<button type="button" onclick="smiley()">Smiley</button>
+			<button type="button" onclick="home()">Home</button>
+			<button type="button" onclick="text()">Text</button>
+	</center>
+	</body>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<script type="text/javascript">
+function line()
+{
+var a = document.getElementById("c1");
+var context=a.getContext("2d");
+context.moveTo(0,0);
+context.lineTo(500,500);
+context.strokeStyle="aqua";
+context.stroke();
+}
+function circle()
+{
+var a = document.getElementById("c1");
+var context=a.getContext("2d");
+context.beginPath();
+context.arc(200,200,100,0,2*Math.PI);
+context.closePath();
+context.lineWidth="3";
+context.fillStyle="blue";
+context.stroke();
+context.fill();
+}
+function triangle()
+{
+var a = document.getElementById("c1");
+var context=a.getContext("2d");
+context.beginPath();
+context.moveTo(100,100);
+context.lineTo(150,150);
+context.lineTo(40,170);
+context.closePath();
+context.fillStyle="yellow";
+context.stroke();
+context.fill();
+}
+function rectangle()
+{
+var a = document.getElementById("c1");
+var context=a.getContext("2d");
+context.strokeRect(100,100,200,200);
+context.fillRect(120,120,160,160);
+context.fillStyle="blue";
+context.fill();
+context.stroke();
+}
+
+function smily()
+{
+var a = document.getElementById("c1");
+var context=a.getContext("2d");
+context.beginPath();
+context.arc(200,200,100,0,2*Math.PI);
+context.closePath();
+context.lineWidth="3";
+context.fillStyle="yellow";
+context.stroke();
+context.fill();
+
+context.beginPath();
+context.arc(160,170,20,0,2*Math.PI);
+context.closePath();
+context.lineWidth="3";
+context.fillStyle="black";
+context.stroke();
+context.fill();
+
+context.beginPath();
+context.arc(240,170,20,0,Math.PI);
+context.closePath();
+context.lineWidth="3";
+context.fillStyle="black";
+context.stroke();
+context.fill();
+
+context.beginPath();
+context.arc(200,220,50,0,Math.PI);
+context.closePath();
+context.lineWidth="3";
+context.stroke();
+}
+</script>
+</head>
+<body>
+<canvas id="c1" height="500px" width="500px" style="border:2px solid blue"></canvas><br>
+<button onclick="line()">Line</button>
+<button onclick="circle()">Circle</button>
+<button onclick="triangle()">Triangle</button>
+<button onclick="rectangle()">Rectangle</button>
+<button onclick="smily()">Smily</button>
+</body>
+</html>
