@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Registration Form</title>
+	<link rel="stylesheet" type="text/css" href="registerstyle.css">
+	    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+	function check()
+	{
+		var name = document.forms["RegForm"]["Name"];
+		var email = document.forms["RegForm"]["EMail"];
+		var phone = document.forms["RegForm"]["Telephone"];
+		var city = document.forms["RegForm"]["City"];
+		var address = document.forms["RegForm"]["Address"]; 
+		var gndr=document.forms["RegForm"]["gender"];
+		var pkg=document.forms["RegForm"]["package"];
+		var regex = /[a-zA-Z]+$/;
+		var reg = /([0-9]{10})+$/;
+
+		if (name.value == "")
+		{
+			window.alert("Please enter your name.");
+			name.focus();
+			return false;
+		}
+
+		if(regex.test(name.value) == false)
+		{
+			window.alert("Name must be in alphabets only");
+			name.focus();
+			return false;
+		}
+
+		if (address.value == "")
+		{
+			window.alert("Please enter your address.");
+			name.focus();
+			return false;
+		}
+
+		if (email.value == "")
+		{
+			window.alert("Please enter a valid e-mail address.");
+			email.focus();
+			return false;
+		}
+
+		if (email.value.indexOf("@", 0) < 0)
+		{
+			window.alert("Please enter a valid e-mail address."); 
+			email.focus();
+			return false;
+		}
+	
+		if (email.value.indexOf(".", 0) < 0)
+		{
+			window.alert("Please enter a valid e-mail address."); 
+			email.focus();
+			return false;
+		}
+
+		if (phone.value == "")
+		{
+			window.alert("Please enter your telephone number."); 
+			phone.focus();
+			return false;
+		}
+
+		if(reg.test(phone.value) == false)
+		{
+			window.alert("Phone No. must be in number of 10 digits");
+			phone.focus();
+			return false;
+		}
+
+		if ( (gndr[0].checked == false ) && (gndr[1].checked == false ) )
+		{
+			alert ( "Please choose your Gender: Male or Female" );
+			return false;
+		}
+		if ( (city[0].checked == false ) && (city[1].checked == false ) && (city[2].checked == false ) )
+		{
+			alert ( "Please choose your City" );
+			return false;
+		}
+		if ( (pkg[0].checked == false ) && (pkg[1].checked == false ) && (pkg[2].checked == false ) )
+		{
+			alert ( "Please select one package" );
+			return false;
+		}
+		else
+		{
+		alert("Submission Successful...!!");	
+		}
+	return true;
+	}
+	
+</script>
+</head>
+
+<body>
+<form name="RegForm" autocomplete="off" onsubmit="return check()" method="post" class="login-form">
+	<h1 > Registration Form </h1>
+	 <div class="txtb">
+          <input type="text" name="Name" required="">
+          <span data-placeholder="Username"></span>
+        </div>
+
+        <div class="txtb">
+          <input type="text" name="EMail" required="">
+          <span data-placeholder="E-Mail"></span>
+        </div>
+       <div class="txtb">
+          <input type="text" name="Address" required="">
+          <span data-placeholder="Address"></span>
+        </div>
+         <div class="txtb">
+          <input type="text" name="Telephone" required="">
+          <span data-placeholder="Contact No."></span>
+        </div>
+        <div class="radiobtn">
+        <table>
+		<tr><td>City: </td><td><input type="radio" name="City">Ahmedabad</td></tr> 
+		<tr><td> </td><td><input type="radio" name="City">Surat</td></tr> 
+		<tr><td> </td><td><input type="radio" name="City">Vadodara</td></tr>
+		<tr><td>Gender: </td><td width="55%"><input type="radio" name="gender">Male</td> 
+		<td><input type="radio" name="gender">Female</td></tr> 
+		<tr><td>Package: </td><td><input type="radio" name="package">Weight Loss</td></tr> 
+		<tr><td> </td><td><input type="radio" name="package">Body Building</td></tr> 
+		<tr><td> </td><td width="58%"><input type="radio" name="package">Complete Transformation</td></tr> 
+		</table>
+        </div>
+<input type="submit" value="Submit" id="submit" name="Submit">
+<input type="reset" value="Reset" id="reset" name="Reset">
+		
+</form>
+ <script type="text/javascript">
+      $(".txtb input").on("focus",function(){
+        $(this).addClass("focus");
+      });
+
+      $(".txtb input").on("blur",function(){
+        if($(this).val() == "")
+        $(this).removeClass("focus");
+      });
+    </script>
+
+</body>
+
+</html>
+

@@ -1,0 +1,144 @@
+	body
+	{
+		margin:0;
+		padding:0;
+		font-family:sans-serif;
+		background:url("registerbg.jpg");
+		background-repeat:no-repeat;
+		background-size:cover;
+		color: white;
+		font-size: 14px;
+	}
+.login-form h1{
+	text-align:center;
+		color:#ffffff;
+		margin-top:0px;
+		font-family: Baskerville;
+}
+
+	.login-form{
+	position:absolute;
+	top:50%;
+	left:50%;
+	transform:translate(-50%,-50%);
+	width:400px;
+	height:600px;
+	margin-top:10px;
+	padding:30px;
+	background-color:black;
+	opacity:0.9;
+	box-sizing:border-box;
+	border:0 15px 25px rgba(0,0,0,0.5);
+	border-radius: 20px;
+}
+	.txtb{
+  border-bottom: 2px groove #adadad;
+  position: relative;
+  margin: 20px 0;
+}
+
+.txtb input{
+  font-size: 15px;
+  color: #ffffff;
+  border: none;
+  width: 100%;
+  outline: none;
+  background: none;
+  padding: 0 5px;
+  height: 30px;
+}
+
+.txtb span::before{
+  content: attr(data-placeholder);
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  color: #adadad;
+  transform: translateY(-30%);
+  z-index: -1;
+  transition: .5s;
+}
+
+.txtb span::after{
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  transition: .5s;
+}
+
+.focus + span::before{
+  top: -5px;
+}
+.focus + span::after{
+  width: 100%;
+}
+
+.radiobtn
+{
+	font-size: 15px;
+  	color: #adadad;
+  	border: none;
+ 	 width: 100%;
+ 	 outline: none;
+	  background: none;
+  	padding: 0 5px;
+  	height: 30px;
+ 	 position: relative;
+}
+	.login-form #submit
+	{	
+		background:transparent;
+		border:1px solid black;
+		position:absolute;
+		bottom: 40px;
+		left:30px;
+		outline:1px;
+		color:#ffffff;
+		background:#222222;
+		padding:10px 20px;
+		border-radius:5px;
+		cursor: pointer;
+		-webkit-transition: all .5s ease;
+		transition: all .5s ease;
+	}
+	.login-form #submit:hover
+	{
+		transform: scale(1.1);
+		border:1px solid black;
+		outline:1px;
+		color:#ffffff;
+		background:#222222;
+		padding:10px 20px;
+		cursor:pointer;
+		border:1px solid #111111;
+		box-shadow: 0 0 10px #111111, 0 0 40px #111111,0 0 80px #111111;
+	}
+
+	.login-form #reset
+	{	
+		background:transparent;
+		border:1px solid black;
+		position: absolute;
+		bottom: 40px;
+		right:30px;
+		outline:1px;
+		color:#ffffff;
+		background:#222222;
+		padding:10px 20px;
+		cursor:pointer;
+		border-radius:5px;
+		-webkit-transition: all .5s ease;
+		transition: all .5s ease;
+	}
+		.login-form #reset:hover
+	{	
+		transform: scale(1.1);
+		border:1px solid black;
+		outline:1px;
+		color:#ffffff;
+		background:#222222;
+		padding:10px 20px;
+		cursor:pointer;
+		border:1px solid #111111;
+		box-shadow: 0 0 10px #111111, 0 0 40px #111111,0 0 80px #111111;
+	}
