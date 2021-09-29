@@ -10,11 +10,3 @@
 
 This place is for those who want to showcase their work in web-development and help the community.
 
-<h2 align="center">Steps to Contribute</h2>
-
-  - Fork the repo
-  - Create a folder named as your work
-  - Add your files inside the folder
-  - Commit the changes
-  - Create a PR
-  - Wait for some time to get it merged
